@@ -11,18 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030171358) do
+ActiveRecord::Schema.define(version: 20151030174909) do
 
   create_table "categories", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "enterprises", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "categories_enterprises", id: false, force: :cascade do |t|
+    t.integer "enterprise_id"
+    t.integer "category_id"
+  end
+
+  add_index "categories_enterprises", ["category_id"], name: "index_categories_enterprises_on_category_id"
+  add_index "categories_enterprises", ["enterprise_id"], name: "index_categories_enterprises_on_enterprise_id"
+
+  create_table "categories_preferences", id: false, force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "preference_id"
+  end
+
+  add_index "categories_preferences", ["category_id"], name: "index_categories_preferences_on_category_id"
+  add_index "categories_preferences", ["preference_id"], name: "index_categories_preferences_on_preference_id"
+
+  create_table "enterprises", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "picture_id"
+    t.integer  "rating_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "enterprises", ["picture_id"], name: "index_enterprises_on_picture_id"
+  add_index "enterprises", ["rating_id"], name: "index_enterprises_on_rating_id"
+
+  create_table "enterprises_users", id: false, force: :cascade do |t|
+    t.integer "enterprise_id"
+    t.integer "user_id"
+  end
+
+  add_index "enterprises_users", ["enterprise_id"], name: "index_enterprises_users_on_enterprise_id"
+  add_index "enterprises_users", ["user_id"], name: "index_enterprises_users_on_user_id"
 
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -30,25 +60,36 @@ ActiveRecord::Schema.define(version: 20151030171358) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "preferences", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.decimal  "rating"
+    t.string   "url"
+    t.integer  "user_id"
     t.integer  "enterprise_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
+  add_index "pictures", ["enterprise_id"], name: "index_pictures_on_enterprise_id"
+  add_index "pictures", ["user_id"], name: "index_pictures_on_user_id"
+
+  create_table "preferences", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.decimal  "rate"
+    t.integer  "enterprise_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   add_index "ratings", ["enterprise_id"], name: "index_ratings_on_enterprise_id"
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
