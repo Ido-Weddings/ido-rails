@@ -4,6 +4,7 @@ class CreatePictures < ActiveRecord::Migration
       t.string :url
       t.belongs_to :user, index: true
       t.belongs_to :enterprise, index: true
+      t.belongs_to :category, index: true
       t.timestamps null: false
     end
   end

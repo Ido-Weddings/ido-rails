@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030174909) do
+ActiveRecord::Schema.define(version: 20151103011020) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -35,15 +35,23 @@ ActiveRecord::Schema.define(version: 20151030174909) do
   add_index "categories_preferences", ["category_id"], name: "index_categories_preferences_on_category_id"
   add_index "categories_preferences", ["preference_id"], name: "index_categories_preferences_on_preference_id"
 
+  create_table "enterprise_category_pictures", force: :cascade do |t|
+    t.integer  "enterprise_id"
+    t.integer  "category_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "enterprise_category_pictures", ["category_id"], name: "index_enterprise_category_pictures_on_category_id"
+  add_index "enterprise_category_pictures", ["enterprise_id"], name: "index_enterprise_category_pictures_on_enterprise_id"
+
   create_table "enterprises", force: :cascade do |t|
     t.string   "name"
-    t.integer  "picture_id"
     t.integer  "rating_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "enterprises", ["picture_id"], name: "index_enterprises_on_picture_id"
   add_index "enterprises", ["rating_id"], name: "index_enterprises_on_rating_id"
 
   create_table "enterprises_users", id: false, force: :cascade do |t|
@@ -63,10 +71,12 @@ ActiveRecord::Schema.define(version: 20151030174909) do
     t.string   "url"
     t.integer  "user_id"
     t.integer  "enterprise_id"
+    t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
+  add_index "pictures", ["category_id"], name: "index_pictures_on_category_id"
   add_index "pictures", ["enterprise_id"], name: "index_pictures_on_enterprise_id"
   add_index "pictures", ["user_id"], name: "index_pictures_on_user_id"
 
@@ -90,8 +100,11 @@ ActiveRecord::Schema.define(version: 20151030174909) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "users", ["user_id"], name: "index_users_on_user_id"
 
 end
