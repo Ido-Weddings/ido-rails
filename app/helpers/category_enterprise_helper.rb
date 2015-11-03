@@ -1,0 +1,2 @@
+module CategoryEnterpriseHelper
+end
