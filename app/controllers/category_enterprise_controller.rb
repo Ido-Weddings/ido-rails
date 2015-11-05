@@ -1,6 +1,15 @@
 class CategoryEnterpriseController < ApplicationController
 	def show
-		@enterprise = Enterprise.all
-		render :json => @enterprise.to_json
+		@category = Category.find(params[:id])
+		render :json => @category.enterprises.to_json(:include => {:categories => {:only => :id}})
+	end
+
+	private
+	def enterprise_params
+		params.require(:enterprise).permit(:name)
+	end
+
+	def category_params
+		params.require(:category).permit(:name)
 	end
 end

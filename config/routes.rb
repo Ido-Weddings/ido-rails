@@ -53,5 +53,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-      get '/category_enterprise' => 'category_enterprise#show'
+      get '/category_enterprise/:id' => 'category_enterprise#show'
 end

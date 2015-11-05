@@ -8286,3 +8286,279 @@ Started GET "/category_enterprise" for ::1 at 2015-11-03 05:00:55 -0200
 Processing by CategoryEnterpriseController#show as HTML
   [1m[35mEnterprise Load (0.4ms)[0m  SELECT "enterprises".* FROM "enterprises"
 Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[36mEnterprise Load (3.5ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "categoria"], ["created_at", "2015-11-04 17:54:03.274234"], ["updated_at", "2015-11-04 17:54:03.274234"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "pictures" ("enterprise_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["enterprise_id", 1], ["category_id", 1], ["created_at", "2015-11-04 17:54:43.949570"], ["updated_at", "2015-11-04 17:54:43.949570"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+
+
+Started GET "/category_enterprise?id=4" for ::1 at 2015-11-04 15:55:43 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35mEnterprise Load (0.5ms)[0m  SELECT "enterprises".* FROM "enterprises"
+Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/category_enterprise?id=4" for ::1 at 2015-11-04 15:56:04 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=4" for ::1 at 2015-11-04 15:56:25 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT "enterprises".* FROM "enterprises"
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=4" for ::1 at 2015-11-04 15:58:46 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=2" for ::1 at 2015-11-04 15:59:14 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT "enterprises".* FROM "enterprises"
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=2" for ::1 at 2015-11-04 16:01:18 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=2" for ::1 at 2015-11-04 16:05:29 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mEnterprise Load (0.3ms)[0m  SELECT "enterprises".* FROM "enterprises"
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/category_enterprise?id=2" for ::1 at 2015-11-04 16:07:36 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=1" for ::1 at 2015-11-04 16:11:18 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT "enterprises".* FROM "enterprises"
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=4" for ::1 at 2015-11-04 16:12:14 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=2" for ::1 at 2015-11-04 16:12:19 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT "enterprises".* FROM "enterprises"
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=1" for ::1 at 2015-11-04 16:12:26 -0200
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/category_enterprise?id=2" for ::1 at 2015-11-05 14:55:55 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CategoryEnterpriseController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mEnterprise Load (1.1ms)[0m  SELECT "enterprises".* FROM "enterprises"
+Completed 200 OK in 33ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+  [1m[36mEnterprise Load (2.9ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 1]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises"[0m
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?[0m  [["enterprise_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "enterprises" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "apple"], ["created_at", "2015-11-05 18:47:40.469601"], ["updated_at", "2015-11-05 18:47:40.469601"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "enterprises" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ibm"], ["created_at", "2015-11-05 18:47:44.586852"], ["updated_at", "2015-11-05 18:47:44.586852"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "enterprises" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "abc"], ["created_at", "2015-11-05 18:47:49.978994"], ["updated_at", "2015-11-05 18:47:49.978994"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "pictures" ("category_id", "enterprise_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 1], ["enterprise_id", 2], ["created_at", "2015-11-05 18:48:54.336602"], ["updated_at", "2015-11-05 18:48:54.336602"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mEnterprise Load (0.3ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pictures" ("category_id", "enterprise_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 1], ["enterprise_id", 3], ["created_at", "2015-11-05 18:48:57.892342"], ["updated_at", "2015-11-05 18:48:57.892342"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pictures" ("category_id", "enterprise_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 1], ["enterprise_id", 4], ["created_at", "2015-11-05 18:49:05.668001"], ["updated_at", "2015-11-05 18:49:05.668001"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 1]]
+
+
+Started GET "/category_enterprise" for ::1 at 2015-11-05 16:49:49 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CategoryEnterpriseController#show as HTML
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 1]]
+Completed 200 OK in 65ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/category_enterprise" for ::1 at 2015-11-05 16:49:55 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/category_enterprise" for ::1 at 2015-11-05 16:51:53 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?[0m  [["enterprise_id", 2]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 3]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?[0m  [["enterprise_id", 4]]
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/category_enterprise/1" for ::1 at 2015-11-05 16:56:31 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?[0m  [["enterprise_id", 2]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 3]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?[0m  [["enterprise_id", 4]]
+Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/category_enterprise/2" for ::1 at 2015-11-05 16:56:43 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=2):
+  app/controllers/category_enterprise_controller.rb:3:in `show'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.6ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "category2"], ["created_at", "2015-11-05 18:57:23.401281"], ["updated_at", "2015-11-05 18:57:23.401281"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pictures" ("category_id", "enterprise_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["category_id", 2], ["enterprise_id", 2], ["created_at", "2015-11-05 18:57:50.783122"], ["updated_at", "2015-11-05 18:57:50.783122"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?  [["category_id", 2]]
+
+
+Started GET "/category_enterprise/2" for ::1 at 2015-11-05 16:58:06 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CategoryEnterpriseController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 2]]
+Completed 200 OK in 69ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "buffet"], ["created_at", "2015-11-05 18:59:16.613979"], ["updated_at", "2015-11-05 18:59:16.613979"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/category_enterprise/3" for ::1 at 2015-11-05 16:59:23 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?  [["category_id", 3]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pictures" ("category_id", "enterprise_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["category_id", 3], ["enterprise_id", 2], ["created_at", "2015-11-05 18:59:35.466288"], ["updated_at", "2015-11-05 18:59:35.466288"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 3]]
+
+
+Started GET "/category_enterprise/3" for ::1 at 2015-11-05 16:59:37 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?  [["category_id", 3]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?[0m  [["enterprise_id", 2]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?[0m  [["enterprise_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "foto"], ["created_at", "2015-11-05 19:01:26.156181"], ["updated_at", "2015-11-05 19:01:26.156181"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+
+
+Started GET "/category_enterprise/4" for ::1 at 2015-11-05 17:01:31 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 4]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT  "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("category_id", "enterprise_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["category_id", 4], ["enterprise_id", 2], ["created_at", "2015-11-05 19:01:55.263871"], ["updated_at", "2015-11-05 19:01:55.263871"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?  [["category_id", 4]]
+
+
+Started GET "/category_enterprise/4" for ::1 at 2015-11-05 17:01:57 -0200
+Processing by CategoryEnterpriseController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" INNER JOIN "pictures" ON "enterprises"."id" = "pictures"."enterprise_id" WHERE "pictures"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "pictures" ON "categories"."id" = "pictures"."category_id" WHERE "pictures"."enterprise_id" = ?  [["enterprise_id", 2]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
