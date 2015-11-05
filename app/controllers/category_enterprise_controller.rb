@@ -1,7 +1,9 @@
 class CategoryEnterpriseController < ApplicationController
 	def show
 		@category = Category.find(params[:id])
-		render :json => @category.enterprises.to_json(:include => {:categories => {:only => :id}})
+		render :json => @category.enterprises.to_json
+
+		#render :json => @category.enterprises.to_json(:include => {:categories => {:only => :id}})
 	end
 
 	private
