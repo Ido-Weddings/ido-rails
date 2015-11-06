@@ -54,4 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
       get '/category_enterprise/:id' => 'category_enterprise#show'
+      post '/signup_user' => 'users#create'
 end
