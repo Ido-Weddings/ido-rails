@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 20151103011020) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "phone_number"
+    t.date     "wedding_date"
     t.string   "password_digest"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
