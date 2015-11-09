@@ -9,7 +9,13 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		@user.save
+		
+		if @user.save
+			render json: @user.to_json
+		else
+			error = {:response => "false"}
+			render json: error.to_json
+		end
 
 		# REVIEW: to improve using callback before_create to e
 		#          verify email.
