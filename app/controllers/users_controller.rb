@@ -9,7 +9,24 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		@user.save
+		#@user.save
+
+		# REVIEW: to improve using callback before_create to e
+		#          verify email.
+		@search = User.where('email = ?', params[:email]).empty?
+
+		# Email dont exist already
+		if @search
+	
+			if @user.save
+				render json: @user.to_json
+			end
+
+		# Email already exist
+		else
+			error = {:response => "false"}
+			render json: error.to_json
+		end
 	end
 
 	def show
