@@ -9,9 +9,10 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		
+
 		if @user.save
-			render json: @user.to_json
+			success = {:response => "true"}
+			render json: success.to_json
 		else
 			error = {:response => "false"}
 			render json: error.to_json
