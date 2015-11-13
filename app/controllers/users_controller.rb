@@ -11,8 +11,10 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
-			success = {:response => "true"}
-			render json: success.to_json
+			#render :json => @category.enterprises.to_json(:include => {:categories => {:only => :id}})
+
+			#success = {:response => "true"}
+			render json: @user.to_json
 		else
 			error = {:response => "false"}
 			render json: error.to_json
@@ -45,6 +47,19 @@ class UsersController < ApplicationController
 
 	end
 
+	def login
+
+		@user = User.find_by_email(user_params[:email]).try(:authenticate, user_params[:password])
+
+		if !@user
+			error = {:response => "false"}
+			render json: error.to_json
+		else
+			render json: @user.to_json
+		end
+
+	end
+
 	def update
 
 	end
@@ -53,8 +68,11 @@ class UsersController < ApplicationController
 
 	end
 
-	def user_params
-		params.require(:user).permit(:name, :email, :password, :password_confirmation,
-										:phone_number, :wedding_date)
-	end
+	private
+		def user_params
+			params.require(:user).permit(:name, :email, :password, :password_confirmation,
+											:phone_number, :wedding_date)
+		end
+
+
 end
