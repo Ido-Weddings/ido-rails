@@ -68,11 +68,21 @@ class UsersController < ApplicationController
 
 	end
 
-	private
-		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation,
-											:phone_number, :wedding_date)
+	def checkusers
+		user = []
+		@phone_users = params[:phone_user]
+		for phones in @phone_users
+			@user = User.find_by_phone_number(phones) 
+			if @user
+				user.push(@user)
+			end
 		end
+		render json: user.to_json
+	end
 
+	private
+	def user_params
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone_number, :wedding_date)
+	end
 
 end
