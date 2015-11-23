@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103011020) do
+ActiveRecord::Schema.define(version: 20151116173404) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -67,6 +67,11 @@ ActiveRecord::Schema.define(version: 20151103011020) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "musicians", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string   "url"
     t.integer  "user_id"
@@ -81,11 +86,18 @@ ActiveRecord::Schema.define(version: 20151103011020) do
   add_index "pictures", ["user_id"], name: "index_pictures_on_user_id"
 
   create_table "preferences", force: :cascade do |t|
-    t.string   "name"
+    t.decimal  "budget"
+    t.boolean  "musician"
+    t.boolean  "band"
+    t.boolean  "dj"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  add_index "preferences", ["category_id"], name: "index_preferences_on_category_id"
+  add_index "preferences", ["user_id"], name: "index_preferences_on_user_id"
 
   create_table "ratings", force: :cascade do |t|
     t.decimal  "rate"
