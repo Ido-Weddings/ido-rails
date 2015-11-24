@@ -61,6 +61,13 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		@user = User.find(params[:user][:id])
+		if @user.update(user_params)
+			render json: @user.to_json
+		else
+			error = {:response => "false"}
+			render json: error.to_json
+		end
 
 	end
 

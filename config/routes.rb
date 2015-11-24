@@ -56,4 +56,5 @@ Rails.application.routes.draw do
       get '/category_enterprise/:id' => 'category_enterprise#show'
       post '/signup_user' => 'users#create'
       post '/signin_user' => 'users#login'
+      put '/update' => 'users#update'
 end
