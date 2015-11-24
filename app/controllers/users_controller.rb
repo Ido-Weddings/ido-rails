@@ -70,11 +70,17 @@ class UsersController < ApplicationController
 			error = {:response => "false"}
 			render json: error.to_json
 		end
-
 	end
 
 	def destroy
+	end
 
+	def follow_provider
+		@user = User.find(params[:id_user])
+		@provider = Enterprise.find(params[:id_provider])
+
+		@user.enterprises << @provider
+		@user.save
 	end
 
 	# Change to get by id
@@ -109,21 +115,39 @@ class UsersController < ApplicationController
 		end
 	end
 
+	# Destroy relation between user and artist
+	def unfollow_provider
+		@user = User.find(params[:id_user])
+		@provider = Enterprise.find(params[:id_provider])
+
+		@user.enterprises.delete @provider
+	end
+
+	def show_providers_by_user
+		@user = User.find(params[:id])
+
+		render json: @user.enterprises.to_json
+	end
+
+	def checkusers
+		user = []
+		@phone_users = params[:phone_user]
+		for phones in @phone_users
+			@user = User.find_by_phone_number(phones) 
+			if @user
+				user.push(@user)
+			end
+		end
+		render json: user.to_json
+	end
+
 	private
-		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation,
-											:phone_number, :wedding_date)
-		end
+	def user_params
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone_number, :wedding_date)
+	end
 
-		def preference_params
-			params.permit(:musician,
-																					:band,
-																					:dj,
-																					:budget,
-																					:category_id)
-		end
+	def preference_params
+		params.permit(:musician, :band, :dj, :budget, :category_id)
+	end
 
-		# def parameters_params
-		# 	params.permit(:preferences => [])
-		# end
 end
