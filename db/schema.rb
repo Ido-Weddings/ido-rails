@@ -47,9 +47,14 @@ ActiveRecord::Schema.define(version: 20151103011020) do
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "name"
+    t.string   "description"
+    t.integer  "capacity"
+    t.string   "telephone"
+    t.string   "cellphone"
     t.integer  "rating_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.decimal  "rate",        default: 0.0
   end
 
   add_index "enterprises", ["rating_id"], name: "index_enterprises_on_rating_id"
@@ -88,7 +93,7 @@ ActiveRecord::Schema.define(version: 20151103011020) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.decimal  "rate"
+    t.decimal  "points"
     t.integer  "enterprise_id"
     t.integer  "user_id"
     t.datetime "created_at",    null: false

@@ -61,11 +61,31 @@ class UsersController < ApplicationController
 	end
 
 	def update
-
 	end
 
 	def destroy
+	end
 
+	def follow_provider
+		@user = User.find(params[:id_user])
+		@provider = Enterprise.find(params[:id_provider])
+
+		@user.enterprises << @provider
+		@user.save
+	end
+
+	# Destroy relation between user and artist
+	def unfollow_provider
+		@user = User.find(params[:id_user])
+		@provider = Enterprise.find(params[:id_provider])
+
+		@user.enterprises.delete @provider
+	end
+
+	def show_providers_by_user
+		@user = User.find(params[:id])
+
+		render json: @user.enterprises.to_json
 	end
 
 	def checkusers

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,8 +55,15 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+      root to: 'home#index'
+      get '/home', to: 'home#index'
       get '/category_enterprise/:id' => 'category_enterprise#show'
       post '/signup_user' => 'users#create'
       post '/signin_user' => 'users#login'
       post '/user_phones' => 'users#checkusers'
+      post '/users/follow_provider' => 'users#follow_provider'
+      post '/users/unfollow_provider' => 'users#unfollow_provider'
+      get '/users/enterprises/:id' => 'users#show_providers_by_user'
+      post '/search_enterprises' => 'category_enterprise#search_enterprise'
+      post '/evaluate_provider' => 'rating#create'
 end
