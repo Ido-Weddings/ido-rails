@@ -1,4 +1,6 @@
+#require 'json'
 class UsersController < ApplicationController
+
 	def index
 
 	end
@@ -75,11 +77,53 @@ class UsersController < ApplicationController
 
 	end
 
+	# Change to get by id
+	def get_user_preference
+		@user = User.find(1)
+		@user_preference = @user.preferences
+		render json: @user_preference.to_json
+	end
+
+	# Change to get by id
+	def update_preferences
+		@user = User.find(1)
+		preferences = params[:preferences]
+		render json: preferences[0][:budget].to_json
+
+		id = 1
+		it = 0
+		preferences.each do |p|
+			 @preference = Preference.find(id)
+			 @preference.budget = preferences[it][:budget]
+			 if it == 4
+				 @preference.musician = preferences[it][:musician]
+				 @preference.band = preferences[it][:band]
+				 @preference.dj = preferences[it][:dj]
+			 else
+				 # Nothing to do
+			 end
+			 
+			 @preference.save
+			 id = id + 1
+			 it = it + 1
+		end
+	end
+
 	private
 		def user_params
 			params.require(:user).permit(:name, :email, :password, :password_confirmation,
 											:phone_number, :wedding_date)
 		end
 
+		def preference_params
+			params.permit(:musician,
+																					:band,
+																					:dj,
+																					:budget,
+																					:category_id)
+		end
 
+		# def parameters_params
+		# 	params.permit(:preferences => [])
+		# end
 end

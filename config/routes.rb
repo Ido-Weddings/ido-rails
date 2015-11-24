@@ -57,4 +57,6 @@ Rails.application.routes.draw do
       post '/signup_user' => 'users#create'
       post '/signin_user' => 'users#login'
       put '/update' => 'users#update'
+      get '/get_user_preference' => 'users#get_user_preference'
+      put '/update_preferences' => 'users#update_preferences'
 end
