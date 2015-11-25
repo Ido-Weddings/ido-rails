@@ -66,7 +66,8 @@ Rails.application.routes.draw do
       post '/user_phones' => 'users#checkusers'
       post '/users/follow_provider' => 'users#follow_provider'
       post '/users/unfollow_provider' => 'users#unfollow_provider'
-      get '/users/enterprises/:id' => 'users#show_providers_by_user'
+      get '/users/enterprises/:id_user' => 'users#show_providers_by_user'
       post '/search_enterprises' => 'category_enterprise#search_enterprise'
       post '/evaluate_provider' => 'rating#create'
+      get '/enterprises_best_rated/:id_category' => 'category_enterprise#search_ranking_enterprises'
 end

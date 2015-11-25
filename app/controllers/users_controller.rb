@@ -81,6 +81,7 @@ class UsersController < ApplicationController
 
 		@user.enterprises << @provider
 		@user.save
+		self.show_providers_by_user
 	end
 
 	# Change to get by id
@@ -121,11 +122,11 @@ class UsersController < ApplicationController
 		@provider = Enterprise.find(params[:id_provider])
 
 		@user.enterprises.delete @provider
+		self.show_providers_by_user
 	end
 
 	def show_providers_by_user
-		@user = User.find(params[:id])
-
+		@user = User.find(params[:id_user])
 		render json: @user.enterprises.to_json
 	end
 

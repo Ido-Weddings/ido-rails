@@ -26,6 +26,11 @@ class CategoryEnterpriseController < ApplicationController
 	    end
 	end
 
+	def search_ranking_enterprises
+		@enterprises = Category.find(params[:id_category]).enterprises.order(:rate).reverse
+		render :json => @enterprises.to_json
+	end
+
 	def evaluate_provider
 	end
 

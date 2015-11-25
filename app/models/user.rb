@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :preferences
   has_many :categories, through: :preferences
 
-  has_and_belongs_to_many :enterprises
+  has_and_belongs_to_many :enterprises, :uniq => true
 
   validates :email, uniqueness: true
 
