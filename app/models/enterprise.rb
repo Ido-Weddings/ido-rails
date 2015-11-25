@@ -16,11 +16,12 @@ class Enterprise < ActiveRecord::Base
       
             enterprise = Enterprise.new
             enterprise.name = "Cerimonial Feliz"
-            enterprise.description = "Mauris egestas id lacus eu gravida. Integer porttitor, velit ut semper scelerisque, eros dolor suscipit ipsum, vel auctor elit nisi in ipsum. Nulla quis enim mauris. Donec convallis nunc id hendrerit condimentum. Duis elementum, purus eu tempus efficitur, tortor orci iaculis turpis, vel congue nibh metus id dui."
+            enterprise.description = "Mauris egestas id lacus eu gravida. Integer porttitor, velit ut semper scelerisque, eros dolor suscipit ipsum, vel auctor elit nisi in ipsum. Nulla quis enim mauris. Donec convallis nunc id hendrerit condimentum. Duis elementum, purus eu tempus efficitur, tortor orci iaculis turpis, vel congue nibh metus id dui. Mauris egestas id lacus eu gravida. Integer porttitor, velit ut semper scelerisque, eros dolor suscipit ipsum, vel auctor elit nisi in ipsum. Nulla quis enim mauris. Donec convallis nunc id hendrerit condimentum. Duis elementum, purus eu tempus efficitur, tortor orci iaculis turpis, vel congue nibh metus id dui. Mauris egestas id lacus eu gravida. Integer porttitor, velit ut semper scelerisque, eros dolor suscipit ipsum, vel auctor elit nisi in ipsum. Nulla quis enim mauris. Donec convallis nunc id hendrerit condimentum. Duis elementum, purus eu tempus efficitur, tortor orci iaculis turpis, vel congue nibh metus id dui."
             enterprise.capacity = "1000"
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 2000.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(1).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -32,6 +33,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 5000.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(2).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -43,6 +45,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 8000.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(3).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -54,6 +57,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 1000.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(4).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -65,6 +69,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 3000.0
             enterprise.categories << Category.find(4)
             enterprise.save
             Picture.find(5).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -76,6 +81,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 2500.0
             enterprise.categories << Category.find(4)
             enterprise.save
             Picture.find(6).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -87,6 +93,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 2800.0
             enterprise.categories << Category.find(4)
             enterprise.save
             Picture.find(7).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -98,6 +105,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 10000.0
             enterprise.categories << Category.find(4)
             enterprise.save
             Picture.find(8).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -109,6 +117,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 9000.0
             enterprise.categories << Category.find(2)
             enterprise.save
             Picture.find(9).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -120,6 +129,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 4300.0
             enterprise.categories << Category.find(2)
             enterprise.save
             Picture.find(10).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -131,6 +141,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 9000.0
             enterprise.categories << Category.find(2)
             enterprise.save
             Picture.find(11).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -142,6 +153,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 12000.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(12).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -153,6 +165,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 8400.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(13).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -164,6 +177,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 20000.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(14).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -175,6 +189,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 7400.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(15).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")
@@ -186,6 +201,7 @@ class Enterprise < ActiveRecord::Base
             enterprise.telephone = "3344-1133"
             enterprise.cellphone = "8112-1212"
             enterprise.cellphone = "9112-1212"
+            enterprise.base_price = 9300.0
             enterprise.categories << Category.find(1)
             enterprise.save
             Picture.find(16).update(url: "https://tecnoblog.net/wp-content/uploads/2011/08/apple-campus-1.png")

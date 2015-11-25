@@ -52,9 +52,12 @@ ActiveRecord::Schema.define(version: 20151116173404) do
     t.string   "telephone"
     t.string   "cellphone"
     t.integer  "rating_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.decimal  "rate",        default: 0.0
+    t.decimal  "base_price"
+    t.float    "latitude",    default: -15.86739
+    t.float    "longitude",   default: -48.030899
   end
 
   add_index "enterprises", ["rating_id"], name: "index_enterprises_on_rating_id"

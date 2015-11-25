@@ -10,6 +10,9 @@ class CreateEnterprises < ActiveRecord::Migration
       t.belongs_to :rating, index: true
       t.timestamps null: false
       t.decimal :rate, default: 0.0
+      t.decimal :base_price
+      t.float :latitude, default: -15.867390
+      t.float :longitude, default: -48.030899
     end
   end
 end

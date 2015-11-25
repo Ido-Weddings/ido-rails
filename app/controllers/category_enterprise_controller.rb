@@ -27,7 +27,9 @@ class CategoryEnterpriseController < ApplicationController
 	end
 
 	def search_ranking_enterprises
-		@enterprises = Category.find(params[:id_category]).enterprises.order(:rate).reverse
+		@user = User.find(params[:id_user])
+		budget = @user.preferences.find(params[:id_category]).budget
+		@enterprises = Category.find(params[:id_category]).enterprises.order(:rate).where("base_price <= ?", budget).reverse
 		render :json => @enterprises.to_json
 	end
 
