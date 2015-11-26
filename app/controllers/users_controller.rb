@@ -116,12 +116,6 @@ class UsersController < ApplicationController
 		end
 	end
 
-	private
-		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation,
-											:phone_number, :wedding_date, :fb_picture_url)
-		end
-
 	# Destroy relation between user and artist
 	def unfollow_provider
 		@user = User.find(params[:id_user])
@@ -147,14 +141,15 @@ class UsersController < ApplicationController
 		end
 		render json: user.to_json
 	end
-
+	
 	private
-	def user_params
-		params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone_number, :wedding_date)
-	end
+		def user_params
+			params.require(:user).permit(:name, :email, :password, :password_confirmation,
+											:phone_number, :wedding_date, :fb_picture_url)
+		end
 
-	def preference_params
-		params.permit(:musician, :band, :dj, :budget, :category_id)
-	end
+		def preference_params
+			params.permit(:musician, :band, :dj, :budget, :category_id)
+		end
 
 end
