@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
   has_many :preferences
   has_many :categories, through: :preferences
 
-  has_and_belongs_to_many :enterprises
+  has_and_belongs_to_many :enterprises, :uniq => true
+
+  after_create :populate_user_with_preference
 
   after_create :populate_user_with_preference
 
