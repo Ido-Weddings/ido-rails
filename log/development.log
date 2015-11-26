@@ -19410,3 +19410,719 @@ Processing by UsersController#get_user_preference as */*
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
   [1m[36mPreference Load (0.3ms)[0m  [1mSELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?[0m  [["user_id", 1]]
 Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/get_user_preference" for ::1 at 2015-11-23 17:39:53 -0200
+Processing by UsersController#get_user_preference as */*
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.2ms)[0m  [1mSELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/update_preferences" for ::1 at 2015-11-23 17:40:06 -0200
+Processing by UsersController#update_preferences as */*
+  Parameters: {"preferences"=>[{"musician"=>false, "band"=>false, "category_id"=>1, "budget"=>3014.184, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>2, "budget"=>30000, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>3, "budget"=>10047.28, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>4, "budget"=>52009.45, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>5, "budget"=>8971.63, "dj"=>true}, {"musician"=>false, "band"=>false, "category_id"=>6, "budget"=>23581.56, "dj"=>false}], "user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.2ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mPreference Load (0.2ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 2.4ms)
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnterprises (20151030171042)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "enterprises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX "index_enterprises_on_rating_id" ON "enterprises" ("rating_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171042"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20151030171112)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone_number" varchar, "wedding_date" date, "password_digest" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_users_on_user_id" ON "users" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171112"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+Migrating to CreatePictures (20151030171316)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "user_id" integer, "enterprise_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_pictures_on_user_id" ON "pictures" ("user_id")[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_pictures_on_enterprise_id" ON "pictures" ("enterprise_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_pictures_on_category_id" ON "pictures" ("category_id")
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171316"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateCategories (20151030171329)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171329"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+Migrating to CreatePreferences (20151030171341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "budget" decimal, "musician" boolean, "band" boolean, "dj" boolean, "user_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_preferences_on_user_id" ON "preferences" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_preferences_on_category_id" ON "preferences" ("category_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171341"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRatings (20151030171350)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rate" decimal, "enterprise_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  CREATE  INDEX "index_ratings_on_enterprise_id" ON "ratings" ("enterprise_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_ratings_on_user_id" ON "ratings" ("user_id")
+  [1m[36mSQL (6.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171350"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateMessages (20151030171358)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171358"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateCategoriesAndEnterprises (20151030171590)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories_enterprises" ("enterprise_id" integer, "category_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_enterprises_on_enterprise_id" ON "categories_enterprises" ("enterprise_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_enterprises_on_category_id" ON "categories_enterprises" ("category_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171590"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEnterprisesAndUsers (20151030171845)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "enterprises_users" ("enterprise_id" integer, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_enterprises_users_on_enterprise_id" ON "enterprises_users" ("enterprise_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_enterprises_users_on_user_id" ON "enterprises_users" ("user_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171845"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateCategoriesAndPreferences (20151030174909)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "categories_preferences" ("category_id" integer, "preference_id" integer) 
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX "index_categories_preferences_on_category_id" ON "categories_preferences" ("category_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_preferences_on_preference_id" ON "categories_preferences" ("preference_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030174909"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEnterpriseCategoryPictures (20151103011020)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "enterprise_category_pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "enterprise_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_enterprise_category_pictures_on_enterprise_id" ON "enterprise_category_pictures" ("enterprise_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_enterprise_category_pictures_on_category_id" ON "enterprise_category_pictures" ("category_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151103011020"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateMusicians (20151116173404)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "musicians" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151116173404"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_preference_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_preference_id' AND type='index'
+
+  [1m[36m (0.7ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_on_rating_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_on_rating_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Cerimonial"], ["created_at", "2015-11-25 15:36:35.749510"], ["updated_at", "2015-11-25 15:36:35.749510"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Photography"], ["created_at", "2015-11-25 15:36:35.756912"], ["updated_at", "2015-11-25 15:36:35.756912"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Dress"], ["created_at", "2015-11-25 15:36:35.759576"], ["updated_at", "2015-11-25 15:36:35.759576"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Decoration"], ["created_at", "2015-11-25 15:36:35.762175"], ["updated_at", "2015-11-25 15:36:35.762175"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Musician"], ["created_at", "2015-11-25 15:36:35.765820"], ["updated_at", "2015-11-25 15:36:35.765820"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Buffet"], ["created_at", "2015-11-25 15:36:35.771004"], ["updated_at", "2015-11-25 15:36:35.771004"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["budget", 100.0], ["category_id", 1], ["created_at", "2015-11-25 15:36:46.948889"], ["updated_at", "2015-11-25 15:36:46.948889"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["budget", 200.0], ["category_id", 2], ["created_at", "2015-11-25 15:36:46.953578"], ["updated_at", "2015-11-25 15:36:46.953578"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["budget", 400.0], ["category_id", 3], ["created_at", "2015-11-25 15:36:46.956234"], ["updated_at", "2015-11-25 15:36:46.956234"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["budget", 500.0], ["category_id", 4], ["created_at", "2015-11-25 15:36:46.959256"], ["updated_at", "2015-11-25 15:36:46.959256"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "preferences" ("budget", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["budget", 600.0], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-25 15:36:46.962265"], ["updated_at", "2015-11-25 15:36:46.962265"]]
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 100.0], ["category_id", 1], ["created_at", "2015-11-25 15:37:58.700835"], ["updated_at", "2015-11-25 15:37:58.700835"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 200.0], ["category_id", 2], ["created_at", "2015-11-25 15:37:58.703218"], ["updated_at", "2015-11-25 15:37:58.703218"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 400.0], ["category_id", 3], ["created_at", "2015-11-25 15:37:58.705369"], ["updated_at", "2015-11-25 15:37:58.705369"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 500.0], ["category_id", 4], ["created_at", "2015-11-25 15:37:58.707393"], ["updated_at", "2015-11-25 15:37:58.707393"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-25 15:37:58.709852"], ["updated_at", "2015-11-25 15:37:58.709852"]]
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 100.0], ["category_id", 1], ["created_at", "2015-11-25 15:38:44.724956"], ["updated_at", "2015-11-25 15:38:44.724956"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 200.0], ["category_id", 2], ["created_at", "2015-11-25 15:38:44.728045"], ["updated_at", "2015-11-25 15:38:44.728045"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 400.0], ["category_id", 3], ["created_at", "2015-11-25 15:38:44.730135"], ["updated_at", "2015-11-25 15:38:44.730135"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 500.0], ["category_id", 4], ["created_at", "2015-11-25 15:38:44.731893"], ["updated_at", "2015-11-25 15:38:44.731893"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-25 15:38:44.733530"], ["updated_at", "2015-11-25 15:38:44.733530"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("budget", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["budget", 600.0], ["category_id", 6], ["created_at", "2015-11-25 15:38:44.735930"], ["updated_at", "2015-11-25 15:38:44.735930"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "jonas"], ["password_digest", "$2a$10$Sgfly0ENFzYeGiW1DWJxSuZz9uuJuBV3nqfczm.4B5gyAZaLhXTUe"], ["created_at", "2015-11-25 15:38:44.696949"], ["updated_at", "2015-11-25 15:38:44.696949"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mPreference Load (0.2ms)[0m  SELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "preferences" ON "categories"."id" = "preferences"."category_id" WHERE "preferences"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnterprises (20151030171042)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "enterprises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "index_enterprises_on_rating_id" ON "enterprises" ("rating_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171042"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20151030171112)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone_number" varchar, "wedding_date" date, "password_digest" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_users_on_user_id" ON "users" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171112"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreatePictures (20151030171316)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "user_id" integer, "enterprise_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_pictures_on_user_id" ON "pictures" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_pictures_on_enterprise_id" ON "pictures" ("enterprise_id")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_pictures_on_category_id" ON "pictures" ("category_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171316"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateCategories (20151030171329)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171329"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreatePreferences (20151030171341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "budget" decimal, "musician" boolean, "band" boolean, "dj" boolean, "user_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_preferences_on_user_id" ON "preferences" ("user_id")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_preferences_on_category_id" ON "preferences" ("category_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171341"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRatings (20151030171350)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rate" decimal, "enterprise_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_ratings_on_enterprise_id" ON "ratings" ("enterprise_id")
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_ratings_on_user_id" ON "ratings" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171350"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateMessages (20151030171358)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171358"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateCategoriesAndEnterprises (20151030171590)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "categories_enterprises" ("enterprise_id" integer, "category_id" integer) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_categories_enterprises_on_enterprise_id" ON "categories_enterprises" ("enterprise_id")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_enterprises_on_category_id" ON "categories_enterprises" ("category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171590"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEnterprisesAndUsers (20151030171845)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "enterprises_users" ("enterprise_id" integer, "user_id" integer) [0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_enterprises_users_on_enterprise_id" ON "enterprises_users" ("enterprise_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_enterprises_users_on_user_id" ON "enterprises_users" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171845"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategoriesAndPreferences (20151030174909)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "categories_preferences" ("category_id" integer, "preference_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_preferences_on_category_id" ON "categories_preferences" ("category_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_preferences_on_preference_id" ON "categories_preferences" ("preference_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030174909"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEnterpriseCategoryPictures (20151103011020)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "enterprise_category_pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "enterprise_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_enterprise_category_pictures_on_enterprise_id" ON "enterprise_category_pictures" ("enterprise_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_enterprise_category_pictures_on_category_id" ON "enterprise_category_pictures" ("category_id")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151103011020"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateMusicians (20151116173404)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "musicians" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151116173404"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_preference_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_preference_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_on_rating_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_on_rating_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Cerimonial"], ["created_at", "2015-11-25 15:42:23.024624"], ["updated_at", "2015-11-25 15:42:23.024624"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Photography"], ["created_at", "2015-11-25 15:42:23.033101"], ["updated_at", "2015-11-25 15:42:23.033101"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Dress"], ["created_at", "2015-11-25 15:42:23.036541"], ["updated_at", "2015-11-25 15:42:23.036541"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Decoration"], ["created_at", "2015-11-25 15:42:23.040354"], ["updated_at", "2015-11-25 15:42:23.040354"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Musician"], ["created_at", "2015-11-25 15:42:23.046829"], ["updated_at", "2015-11-25 15:42:23.046829"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Buffet"], ["created_at", "2015-11-25 15:42:23.051469"], ["updated_at", "2015-11-25 15:42:23.051469"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "jonas"], ["password_digest", "$2a$10$HNMBWjX1Fn2Lwr3R/3sW1ezBOFbEGOauuAZ.cbh3IDay.3QnYz2N2"], ["created_at", "2015-11-25 15:43:02.614579"], ["updated_at", "2015-11-25 15:43:02.614579"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 100.0], ["user_id", 1], ["category_id", 1], ["created_at", "2015-11-25 15:43:02.643163"], ["updated_at", "2015-11-25 15:43:02.643163"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 200.0], ["user_id", 1], ["category_id", 2], ["created_at", "2015-11-25 15:43:02.647782"], ["updated_at", "2015-11-25 15:43:02.647782"]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 400.0], ["user_id", 1], ["category_id", 3], ["created_at", "2015-11-25 15:43:02.650671"], ["updated_at", "2015-11-25 15:43:02.650671"]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 500.0], ["user_id", 1], ["category_id", 4], ["created_at", "2015-11-25 15:43:02.654224"], ["updated_at", "2015-11-25 15:43:02.654224"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["user_id", 1], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-25 15:43:02.657977"], ["updated_at", "2015-11-25 15:43:02.657977"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["user_id", 1], ["category_id", 6], ["created_at", "2015-11-25 15:43:02.660545"], ["updated_at", "2015-11-25 15:43:02.660545"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mPreference Load (0.2ms)[0m  [1mSELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?[0m  [["user_id", 1]]
