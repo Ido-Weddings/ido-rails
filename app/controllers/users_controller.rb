@@ -102,7 +102,7 @@ class UsersController < ApplicationController
 			 else
 				 # Nothing to do
 			 end
-			 
+
 			 @preference.save
 			 id = id + 1
 			 it = it + 1
@@ -112,7 +112,7 @@ class UsersController < ApplicationController
 	private
 		def user_params
 			params.require(:user).permit(:name, :email, :password, :password_confirmation,
-											:phone_number, :wedding_date)
+											:phone_number, :wedding_date, :fb_picture_url)
 		end
 
 		def preference_params
