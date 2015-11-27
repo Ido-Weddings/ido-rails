@@ -56,6 +56,6 @@ Rails.application.routes.draw do
       get '/category_enterprise/:id' => 'category_enterprise#show'
       post '/signup_user' => 'users#create'
       post '/signin_user' => 'users#login'
-      get '/get_user_preference' => 'users#get_user_preference'
+      get '/get_user_preference/:id' => 'users#get_user_preference'
       put '/update_preferences' => 'users#update_preferences'
 end

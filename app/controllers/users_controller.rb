@@ -72,7 +72,7 @@ class UsersController < ApplicationController
 
 	# Change to get by id
 	def get_user_preference
-		@user = User.find(1)
+		@user = User.find(params[:id])
 		@user_preference = @user.preferences
 		render json: @user_preference.to_json
 	end
@@ -95,7 +95,7 @@ class UsersController < ApplicationController
 			 else
 				 # Nothing to do
 			 end
-			 
+
 			 @preference.save
 			 id = id + 1
 			 it = it + 1

@@ -20126,3 +20126,1359 @@ Migrating to CreateMusicians (20151116173404)
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["user_id", 1], ["category_id", 6], ["created_at", "2015-11-25 15:43:02.660545"], ["updated_at", "2015-11-25 15:43:02.660545"]]
   [1m[35m (0.8ms)[0m  commit transaction
   [1m[36mPreference Load (0.2ms)[0m  [1mSELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?[0m  [["user_id", 1]]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:24:59 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.3ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:01 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.2ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:08 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.3ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:11 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.7ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:12 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.9ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:14 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.1ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:14 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.4ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:15 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.3ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:15 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.9ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:16 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.4ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:25:16 -0200
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.1ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fd35c40c0b8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fd35d42be08 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fd35d428848 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnterprises (20151030171042)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "enterprises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_enterprises_on_rating_id" ON "enterprises" ("rating_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171042"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20151030171112)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone_number" varchar, "wedding_date" date, "password_digest" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_users_on_user_id" ON "users" ("user_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171112"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreatePictures (20151030171316)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "user_id" integer, "enterprise_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_pictures_on_user_id" ON "pictures" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_pictures_on_enterprise_id" ON "pictures" ("enterprise_id")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_pictures_on_category_id" ON "pictures" ("category_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171316"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateCategories (20151030171329)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171329"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreatePreferences (20151030171341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "budget" decimal, "musician" boolean, "band" boolean, "dj" boolean, "user_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_preferences_on_user_id" ON "preferences" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_preferences_on_category_id" ON "preferences" ("category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171341"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRatings (20151030171350)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rate" decimal, "enterprise_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_ratings_on_enterprise_id" ON "ratings" ("enterprise_id")
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_ratings_on_user_id" ON "ratings" ("user_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171350"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateMessages (20151030171358)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171358"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateCategoriesAndEnterprises (20151030171590)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "categories_enterprises" ("enterprise_id" integer, "category_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_enterprises_on_enterprise_id" ON "categories_enterprises" ("enterprise_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_enterprises_on_category_id" ON "categories_enterprises" ("category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030171590"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEnterprisesAndUsers (20151030171845)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "enterprises_users" ("enterprise_id" integer, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_enterprises_users_on_enterprise_id" ON "enterprises_users" ("enterprise_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_enterprises_users_on_user_id" ON "enterprises_users" ("user_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030171845"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateCategoriesAndPreferences (20151030174909)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "categories_preferences" ("category_id" integer, "preference_id" integer) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_categories_preferences_on_category_id" ON "categories_preferences" ("category_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_categories_preferences_on_preference_id" ON "categories_preferences" ("preference_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030174909"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEnterpriseCategoryPictures (20151103011020)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "enterprise_category_pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "enterprise_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_enterprise_category_pictures_on_enterprise_id" ON "enterprise_category_pictures" ("enterprise_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_enterprise_category_pictures_on_category_id" ON "enterprise_category_pictures" ("category_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151103011020"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateMusicians (20151116173404)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "musicians" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151116173404"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_enterprises_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_preference_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_preference_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_preferences_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprise_category_pictures_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_on_rating_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_on_rating_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enterprises_users_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_enterprise_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_category_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_preferences_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_enterprise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_user_id' AND type='index'
+
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:27:06 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]", "name"=>"Wesley", "phone_number"=>"9999999999"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@w.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Wesley"], ["email", "w@w.com"], ["password_digest", "$2a$10$2QpBaQRvDjo8XgQ7ZJmHSOUqsXXfihsGcbMHdQqtYgex1PoK4kLfW"], ["phone_number", "9999999999"], ["created_at", "2015-11-25 17:27:07.313823"], ["updated_at", "2015-11-25 17:27:07.313823"]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+Completed 404 Not Found in 118ms (ActiveRecord: 2.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=1):
+  app/models/user.rb:29:in `populate_user_with_preference'
+  app/controllers/users_controller.rb:15:in `create'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.5ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff51c5eaba0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff51c5ea880 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff51c5e35f8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:27:08 -0200
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]", "name"=>"Wesley", "phone_number"=>"9999999999"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@w.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wesley"], ["email", "w@w.com"], ["password_digest", "$2a$10$ex.3W0pk6NXdB.G/rHbM7OL7WIbRWR6O8tveoWt2vZbAYC830.tRC"], ["phone_number", "9999999999"], ["created_at", "2015-11-25 17:27:08.168374"], ["updated_at", "2015-11-25 17:27:08.168374"]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Completed 404 Not Found in 78ms (ActiveRecord: 1.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=1):
+  app/models/user.rb:29:in `populate_user_with_preference'
+  app/controllers/users_controller.rb:15:in `create'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.7ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff51c5eaba0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff51c5ea880 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff51c5e35f8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Cerimonial"], ["created_at", "2015-11-25 17:27:49.311365"], ["updated_at", "2015-11-25 17:27:49.311365"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Photography"], ["created_at", "2015-11-25 17:27:49.321348"], ["updated_at", "2015-11-25 17:27:49.321348"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Dress"], ["created_at", "2015-11-25 17:27:49.324391"], ["updated_at", "2015-11-25 17:27:49.324391"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Decoration"], ["created_at", "2015-11-25 17:27:49.327405"], ["updated_at", "2015-11-25 17:27:49.327405"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Musician"], ["created_at", "2015-11-25 17:27:49.330619"], ["updated_at", "2015-11-25 17:27:49.330619"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Buffet"], ["created_at", "2015-11-25 17:27:49.333576"], ["updated_at", "2015-11-25 17:27:49.333576"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 15:28:10 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]", "name"=>"Wesley", "phone_number"=>"9999999999"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@w.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Wesley"], ["email", "w@w.com"], ["password_digest", "$2a$10$Zm.4LoWMtL4MtN07oDsAee2VgRq/RgVj3nFb3GP1iapM6DVbyoGIS"], ["phone_number", "9999999999"], ["created_at", "2015-11-25 17:28:11.094402"], ["updated_at", "2015-11-25 17:28:11.094402"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 100.0], ["user_id", 1], ["category_id", 1], ["created_at", "2015-11-25 17:28:11.115985"], ["updated_at", "2015-11-25 17:28:11.115985"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 200.0], ["user_id", 1], ["category_id", 2], ["created_at", "2015-11-25 17:28:11.118278"], ["updated_at", "2015-11-25 17:28:11.118278"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 400.0], ["user_id", 1], ["category_id", 3], ["created_at", "2015-11-25 17:28:11.120113"], ["updated_at", "2015-11-25 17:28:11.120113"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 500.0], ["user_id", 1], ["category_id", 4], ["created_at", "2015-11-25 17:28:11.121413"], ["updated_at", "2015-11-25 17:28:11.121413"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["budget", 600.0], ["user_id", 1], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-25 17:28:11.122682"], ["updated_at", "2015-11-25 17:28:11.122682"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 600.0], ["user_id", 1], ["category_id", 6], ["created_at", "2015-11-25 17:28:11.125227"], ["updated_at", "2015-11-25 17:28:11.125227"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 134ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/user_phones" for ::1 at 2015-11-25 15:28:37 -0200
+
+ActionController::RoutingError (No route matches [POST] "/user_phones"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.8ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (98.6ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (55.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (122.8ms)
+
+
+Started GET "/users/enterprises/1?id=1" for ::1 at 2015-11-25 15:28:39 -0200
+
+ActionController::RoutingError (No route matches [GET] "/users/enterprises/1"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.1ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.8ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (95.1ms)
+
+
+Started GET "/get_user_preference" for ::1 at 2015-11-25 15:28:48 -0200
+Processing by UsersController#get_user_preference as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.2ms)[0m  [1mSELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+
+Started POST "/signin_user" for ::1 at 2015-11-25 16:24:09 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "w@w.com"]]
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/get_user_preference/1?id=1" for ::1 at 2015-11-25 16:24:15 -0200
+Processing by UsersController#get_user_preference as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPreference Load (0.2ms)[0m  SELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/update_preferences" for ::1 at 2015-11-25 16:46:12 -0200
+Processing by UsersController#update_preferences as */*
+  Parameters: {"preferences"=>[{"musician"=>false, "band"=>false, "category_id"=>1, "budget"=>100, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>2, "budget"=>200, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>3, "budget"=>400, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>4, "budget"=>500, "dj"=>false}, {"musician"=>true, "band"=>true, "category_id"=>5, "budget"=>600, "dj"=>false}, {"musician"=>false, "band"=>false, "category_id"=>6, "budget"=>600, "dj"=>false}], "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPreference Load (0.2ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mPreference Load (0.2ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/get_user_preference/1?id=1" for ::1 at 2015-11-25 16:46:26 -0200
+Processing by UsersController#get_user_preference as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.2ms)[0m  [1mSELECT "preferences".* FROM "preferences" WHERE "preferences"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-25 17:11:10 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "w@w.com"]]
+Completed 200 OK in 97ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/enterprises/1?id=1" for ::1 at 2015-11-25 17:11:21 -0200
+
+ActionController::RoutingError (No route matches [GET] "/users/enterprises/1"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.6ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (101.2ms)
+
+
+Started POST "/user_phones" for ::1 at 2015-11-25 17:11:23 -0200
+
+ActionController::RoutingError (No route matches [POST] "/user_phones"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wesleyaraujo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.5ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wesleyaraujo/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (81.6ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-25 17:19:03 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "w@w.com"]]
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+
+
+Started POST "/signin_user" for ::1 at 2015-11-25 17:19:49 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "w@w.com"]]
+Completed 200 OK in 75ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-25 17:22:42 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "w@w.com"]]
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-25 17:34:47 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "w@w.com"]]
+Completed 200 OK in 77ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/signup_user" for ::1 at 2015-11-25 17:51:27 -0200
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"h@h.com", "password"=>"[FILTERED]", "name"=>"H", "phone_number"=>"5555555555"}}
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'h@h.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "H"], ["email", "h@h.com"], ["password_digest", "$2a$10$lQRde4Dt.vQnRDXSSdTrZOXphvOMtavFdcFIun34w95Otjs9/N1zy"], ["phone_number", "5555555555"], ["created_at", "2015-11-25 19:51:27.377146"], ["updated_at", "2015-11-25 19:51:27.377146"]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 100.0], ["user_id", 2], ["category_id", 1], ["created_at", "2015-11-25 19:51:27.414970"], ["updated_at", "2015-11-25 19:51:27.414970"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 200.0], ["user_id", 2], ["category_id", 2], ["created_at", "2015-11-25 19:51:27.417911"], ["updated_at", "2015-11-25 19:51:27.417911"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 400.0], ["user_id", 2], ["category_id", 3], ["created_at", "2015-11-25 19:51:27.420072"], ["updated_at", "2015-11-25 19:51:27.420072"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 500.0], ["user_id", 2], ["category_id", 4], ["created_at", "2015-11-25 19:51:27.422030"], ["updated_at", "2015-11-25 19:51:27.422030"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["user_id", 2], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-25 19:51:27.423903"], ["updated_at", "2015-11-25 19:51:27.423903"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["user_id", 2], ["category_id", 6], ["created_at", "2015-11-25 19:51:27.426219"], ["updated_at", "2015-11-25 19:51:27.426219"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Completed 200 OK in 202ms (Views: 0.5ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 13:36:12 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "w@w.com"]]
+Completed 200 OK in 106ms (Views: 0.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 14:19:58 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"wesley.araujo.unb@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "wesley.araujo.unb@gmail.com"]]
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 14:20:51 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "w@w.com"]]
+Completed 200 OK in 73ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 14:21:34 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "w@w.com"]]
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 15:47:42 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"wesley.araujo.unb@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "wesley.araujo.unb@gmail.com"]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 15:47:51 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", ""]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 15:47:53 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", ""]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 15:48:08 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"wesley.araujo.unb@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "wesley.araujo.unb@gmail.com"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signup_user" for ::1 at 2015-11-26 15:54:30 -0200
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"a@a.com", "password"=>"[FILTERED]", "name"=>"wesley", "phone_number"=>"3444344444"}}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@a.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "wesley"], ["email", "a@a.com"], ["password_digest", "$2a$10$H6vLNtJ1YC5M5EXhOn1I3e8AGmPNX6bOQPAPMG4Bnkf96IjS1TQKW"], ["phone_number", "3444344444"], ["created_at", "2015-11-26 17:54:30.364428"], ["updated_at", "2015-11-26 17:54:30.364428"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 100.0], ["user_id", 3], ["category_id", 1], ["created_at", "2015-11-26 17:54:30.370832"], ["updated_at", "2015-11-26 17:54:30.370832"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 200.0], ["user_id", 3], ["category_id", 2], ["created_at", "2015-11-26 17:54:30.372730"], ["updated_at", "2015-11-26 17:54:30.372730"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 400.0], ["user_id", 3], ["category_id", 3], ["created_at", "2015-11-26 17:54:30.374221"], ["updated_at", "2015-11-26 17:54:30.374221"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 500.0], ["user_id", 3], ["category_id", 4], ["created_at", "2015-11-26 17:54:30.375758"], ["updated_at", "2015-11-26 17:54:30.375758"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["user_id", 3], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-26 17:54:30.377256"], ["updated_at", "2015-11-26 17:54:30.377256"]]
+  [1m[35mCategory Load (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["budget", 600.0], ["user_id", 3], ["category_id", 6], ["created_at", "2015-11-26 17:54:30.378901"], ["updated_at", "2015-11-26 17:54:30.378901"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Completed 200 OK in 93ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/signin_user" for ::1 at 2015-11-26 15:57:20 -0200
+Processing by UsersController#login as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "w@w.com"]]
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/signup_user" for ::1 at 2015-11-26 16:08:48 -0200
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"w@w.com.br", "password"=>"[FILTERED]", "name"=>"f", "phone_number"=>"1222222222"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@w.com.br' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "f"], ["email", "w@w.com.br"], ["password_digest", "$2a$10$XGcExJDtiTeJ.bWBd6vqUu/LdM2bEyognm.wgOn.uZvh5revVGPze"], ["phone_number", "1222222222"], ["created_at", "2015-11-26 18:08:48.357495"], ["updated_at", "2015-11-26 18:08:48.357495"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 100.0], ["user_id", 4], ["category_id", 1], ["created_at", "2015-11-26 18:08:48.360064"], ["updated_at", "2015-11-26 18:08:48.360064"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 200.0], ["user_id", 4], ["category_id", 2], ["created_at", "2015-11-26 18:08:48.362916"], ["updated_at", "2015-11-26 18:08:48.362916"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 400.0], ["user_id", 4], ["category_id", 3], ["created_at", "2015-11-26 18:08:48.364738"], ["updated_at", "2015-11-26 18:08:48.364738"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 500.0], ["user_id", 4], ["category_id", 4], ["created_at", "2015-11-26 18:08:48.366419"], ["updated_at", "2015-11-26 18:08:48.366419"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["budget", 600.0], ["user_id", 4], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-26 18:08:48.368063"], ["updated_at", "2015-11-26 18:08:48.368063"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 600.0], ["user_id", 4], ["category_id", 6], ["created_at", "2015-11-26 18:08:48.370470"], ["updated_at", "2015-11-26 18:08:48.370470"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 89ms (Views: 0.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/signup_user" for ::1 at 2015-11-26 16:21:58 -0200
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"l@l.com", "password"=>"[FILTERED]", "name"=>"Luiz Inacio Lula da Silva", "phone_number"=>"2222222222"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@l.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Luiz Inacio Lula da Silva"], ["email", "l@l.com"], ["password_digest", "$2a$10$.D9N.EbeV3h7uxe.PR8gHe7YKE/QM7/WKlgwaoc8K0r96KSGAOKva"], ["phone_number", "2222222222"], ["created_at", "2015-11-26 18:21:58.848063"], ["updated_at", "2015-11-26 18:21:58.848063"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 100.0], ["user_id", 5], ["category_id", 1], ["created_at", "2015-11-26 18:21:58.849754"], ["updated_at", "2015-11-26 18:21:58.849754"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 200.0], ["user_id", 5], ["category_id", 2], ["created_at", "2015-11-26 18:21:58.851307"], ["updated_at", "2015-11-26 18:21:58.851307"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 400.0], ["user_id", 5], ["category_id", 3], ["created_at", "2015-11-26 18:21:58.852453"], ["updated_at", "2015-11-26 18:21:58.852453"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 500.0], ["user_id", 5], ["category_id", 4], ["created_at", "2015-11-26 18:21:58.853522"], ["updated_at", "2015-11-26 18:21:58.853522"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "musician", "band", "dj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["budget", 600.0], ["user_id", 5], ["category_id", 5], ["musician", "t"], ["band", "t"], ["dj", "f"], ["created_at", "2015-11-26 18:21:58.855343"], ["updated_at", "2015-11-26 18:21:58.855343"]]
+  [1m[36mCategory Load (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("budget", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["budget", 600.0], ["user_id", 5], ["category_id", 6], ["created_at", "2015-11-26 18:21:58.857057"], ["updated_at", "2015-11-26 18:21:58.857057"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 1.9ms)
