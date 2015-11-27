@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116173404) do
+ActiveRecord::Schema.define(version: 20151127170932) do
+
+  create_table "advises", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "enterprise_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "advises", ["enterprise_id"], name: "index_advises_on_enterprise_id"
+  add_index "advises", ["user_id"], name: "index_advises_on_user_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -47,9 +57,17 @@ ActiveRecord::Schema.define(version: 20151116173404) do
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "name"
+    t.string   "description"
+    t.integer  "capacity"
+    t.string   "telephone"
+    t.string   "cellphone"
     t.integer  "rating_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.decimal  "rate",        default: 0.0
+    t.decimal  "base_price"
+    t.float    "latitude",    default: -15.86739
+    t.float    "longitude",   default: -48.030899
   end
 
   add_index "enterprises", ["rating_id"], name: "index_enterprises_on_rating_id"
@@ -100,7 +118,7 @@ ActiveRecord::Schema.define(version: 20151116173404) do
   add_index "preferences", ["user_id"], name: "index_preferences_on_user_id"
 
   create_table "ratings", force: :cascade do |t|
-    t.decimal  "rate"
+    t.decimal  "points"
     t.integer  "enterprise_id"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
@@ -116,6 +134,7 @@ ActiveRecord::Schema.define(version: 20151116173404) do
     t.string   "phone_number"
     t.date     "wedding_date"
     t.string   "password_digest"
+    t.string   "fb_picture_url"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
