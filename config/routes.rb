@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+      resources :enterprises
       root to: 'home#index'
       get '/home', to: 'home#index'
       get '/category_enterprise/:id' => 'category_enterprise#show'
