@@ -6,6 +6,10 @@ class CreateEnterprises < ActiveRecord::Migration
       t.integer :capacity
       t.string :telephone
       t.string :cellphone
+      t.string :email
+      t.string :address
+      t.string :password_digest
+      t.string :cover
       #t.belongs_to :picture, index: true
       t.belongs_to :rating, index: true
       t.timestamps null: false

@@ -8,4 +8,15 @@ class ApplicationController < ActionController::Base
   # def json_request?
   #   request.format.json?
   # end
+
+  def current_enterprise
+    @current_enterprise ||= Enterprise.find(session[:enterprise_id]) if session[:enterprise_id]
+  end
+  helper_method :current_enterprise
+
+  def authorize
+    redirect_to '/login' unless current_enterprise
+  end
+
+
 end

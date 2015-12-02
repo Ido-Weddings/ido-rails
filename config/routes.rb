@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'session/new'
+
+  get 'session/create'
+
+  get 'session/destroy'
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -57,7 +63,7 @@ Rails.application.routes.draw do
   #   end
       root to: 'home#index'
       get '/home', to: 'home#index'
-      get '/category_enterprise/:id' => 'category_enterprise#show'
+      get '/category_enterprise/:id' => 'enterprises#show'
       post '/signup_user' => 'users#create'
       post '/signin_user' => 'users#login'
       get '/get_user_preference/:id' => 'users#get_user_preference'
@@ -67,8 +73,15 @@ Rails.application.routes.draw do
       post '/users/follow_provider' => 'users#follow_provider'
       post '/users/unfollow_provider' => 'users#unfollow_provider'
       get '/users/enterprises/:id_user' => 'users#show_providers_by_user'
-      post '/search_enterprises' => 'category_enterprise#search_enterprise'
+      post '/search_enterprises' => 'enterprises#search_enterprise'
       post '/evaluate_provider' => 'rating#create'
-      get '/enterprises_best_rated/:id_category' => 'category_enterprise#search_ranking_enterprises'
+      get '/enterprises_best_rated/:id_category' => 'enterprises#search_ranking_enterprises'
       post '/users/profile_picture' => 'users#save_profile_picture'
+
+      get '/login' => 'sessions#new'
+      post '/login' => 'sessions#create'
+      get '/logout' => 'sessions#destroy'
+
+      resources :enterprises
+
 end
