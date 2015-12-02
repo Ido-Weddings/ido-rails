@@ -86,7 +86,7 @@ class UsersController < ApplicationController
 
 	# Change to get by id
 	def get_user_preference
-		@user = User.find(params[:id])
+		@user = User.find(1)
 		@user_preference = @user.preferences
 		render json: @user_preference.to_json
 	end
@@ -141,10 +141,22 @@ class UsersController < ApplicationController
 		end
 		render json: user.to_json
 	end
-	
+
+	def save_profile_picture
+		@user = User.find(user_params[:id])
+		if @user
+			file_data = params[:fb_picture_url].tempfile
+			avatar = Cloudinary::Uploader.upload(File.open(file_data, 'r'))
+			@user.update(fb_picture_url: avatar["url"])
+		else
+			error = {:response => "false"}
+			render json: error.to_json
+		end
+	end
+
 	private
 		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation,
+			params.require(:user).permit(:id, :name, :email, :password, :password_confirmation,
 											:phone_number, :wedding_date, :fb_picture_url)
 		end
 

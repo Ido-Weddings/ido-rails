@@ -70,4 +70,5 @@ Rails.application.routes.draw do
       post '/search_enterprises' => 'category_enterprise#search_enterprise'
       post '/evaluate_provider' => 'rating#create'
       get '/enterprises_best_rated/:id_category' => 'category_enterprise#search_ranking_enterprises'
+      post '/users/profile_picture' => 'users#save_profile_picture'
 end

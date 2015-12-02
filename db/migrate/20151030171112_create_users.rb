@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date :wedding_date
       t.string :password_digest
       t.string :fb_picture_url
+      t.string :profile_picture
       t.belongs_to :user, index: true
       t.timestamps null: false
     end
