@@ -5,12 +5,16 @@ class EnterprisesController < ApplicationController
   # GET /enterprises
   # GET /enterprises.json
   def index
-    @enterprises = Enterprise.all
+    #@enterprises = Enterprise.all
+    @enterprise = Enterprise.find current_enterprise.id
   end
 
   # GET /enterprises/1
   # GET /enterprises/1.json
   def show
+  end
+
+  def pick_image
   end
 
   # GET /enterprises/new
@@ -20,6 +24,7 @@ class EnterprisesController < ApplicationController
 
   # GET /enterprises/1/edit
   def edit
+
   end
 
   # POST /enterprises
