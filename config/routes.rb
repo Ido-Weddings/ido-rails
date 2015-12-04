@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+      resources :enterprises
       root to: 'home#index'
       get '/home', to: 'home#index'
       get '/category_enterprise/:id' => 'category_enterprise#show'
@@ -70,4 +71,8 @@ Rails.application.routes.draw do
       post '/search_enterprises' => 'category_enterprise#search_enterprise'
       post '/evaluate_provider' => 'rating#create'
       get '/enterprises_best_rated/:id_category' => 'category_enterprise#search_ranking_enterprises'
+      post '/users/advise_provider' => 'users#advise_provider'
+      get '/users/enterprises_advised/:id_user' => 'users#show_providers_advised_by_user'
+      get '/enterprise/messages/:id_enterprise' => 'recomendation_message#show'
+      post '/enterprise/create_recomendation' => 'recomendation_message#create'
 end

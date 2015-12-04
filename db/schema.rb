@@ -62,12 +62,13 @@ ActiveRecord::Schema.define(version: 20151127170932) do
     t.string   "telephone"
     t.string   "cellphone"
     t.integer  "rating_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.decimal  "rate",        default: 0.0
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.decimal  "rate",           default: 0.0
     t.decimal  "base_price"
-    t.float    "latitude",    default: -15.86739
-    t.float    "longitude",   default: -48.030899
+    t.float    "latitude",       default: -15.86739
+    t.float    "longitude",      default: -48.030899
+    t.integer  "number_ratings", default: 0
   end
 
   add_index "enterprises", ["rating_id"], name: "index_enterprises_on_rating_id"
@@ -81,9 +82,15 @@ ActiveRecord::Schema.define(version: 20151127170932) do
   add_index "enterprises_users", ["user_id"], name: "index_enterprises_users_on_user_id"
 
   create_table "messages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "enterprise_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "message"
   end
+
+  add_index "messages", ["enterprise_id"], name: "index_messages_on_enterprise_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "musicians", force: :cascade do |t|
     t.datetime "created_at", null: false

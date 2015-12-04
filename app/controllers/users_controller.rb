@@ -131,15 +131,34 @@ class UsersController < ApplicationController
 	end
 
 	def checkusers
+		@current_user = User.find(params[:id_user])
 		user = []
 		@phone_users = params[:phone_user]
 		for phones in @phone_users
 			@user = User.find_by_phone_number(phones)
 			if @user
+				@current_user.friends << @user
 				user.push(@user)
 			end
 		end
-		render json: user.to_json
+		render json: @current_user.friends.to_json
+	end
+
+	def show_providers_advised_by_user
+		@enterprises = Enterprise.joins(:advises).where(advises: {user_id: params[:id_user]})
+		render json: @enterprises.to_json
+	end
+
+	def advise_provider
+		@advise = Advise.new(user_id: params[:id_user], enterprise_id: params[:enterprise_id])
+
+
+		if @advise.save
+			render json: @user.to_json
+		else
+			error = {:response => "false"}
+			render json: error.to_json
+		end
 	end
 	
 	private

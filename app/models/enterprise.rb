@@ -1,5 +1,6 @@
 class Enterprise < ActiveRecord::Base
   has_many :ratings
+  has_many :messages
 
   has_many :advises
   has_many :users, through: :advises
