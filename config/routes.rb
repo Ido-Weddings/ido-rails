@@ -82,6 +82,8 @@ Rails.application.routes.draw do
       post '/login' => 'sessions#create'
       get '/logout' => 'sessions#destroy'
 
+      put '/update_picture' => 'enterprises#pick_image'
+
       resources :enterprises
 
 end

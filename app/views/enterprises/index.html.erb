@@ -1,6 +1,11 @@
-
-<%= form_for @enterprise, :html => {multipart: true} do |f| %>
-  <%= f.file_field :cover %>
+<%= form_tag '/pick_image', method: :put, html: {multipart: true} do %>
+  <div>
+    <%= file_field_tag :cover %>
+  </div>
+  <div>
+    <%= label_tag :category, 'Categoria' %>
+    <%= select_tag('category', options_from_collection_for_select(Category.all, "id", "name")) %>
+  </div>
+  <%= submit_tag 'enviar' %>
 <% end %>
-
 <%= link_to 'New Enterprise', new_enterprise_path %>

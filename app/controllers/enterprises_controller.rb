@@ -7,6 +7,11 @@ class EnterprisesController < ApplicationController
   def index
     #@enterprises = Enterprise.all
     @enterprise = Enterprise.find current_enterprise.id
+    @categories = @enterprise.categories
+    @pictures = Picture.find_by_enterprise_id(current_enterprise.id)
+    @picture = Picture.new
+    #@picture = Picture.new enterprise_id: current_enterprise.id,
+                            #category_id:
   end
 
   # GET /enterprises/1

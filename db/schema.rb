@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20151127170932) do
     t.string   "email"
     t.string   "address"
     t.string   "password_digest"
+    t.string   "cover"
     t.integer  "rating_id"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
