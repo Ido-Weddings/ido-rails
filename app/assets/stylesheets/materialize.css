@@ -4,7 +4,8 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 .materialize-red.lighten-5 {
-  background-color: #fdeaeb !important; }
+  background-color: #fdeaeb !importan
+  t; }
 
 .materialize-red-text.text-lighten-5 {
   color: #fdeaeb !important; }
@@ -5865,7 +5866,7 @@ small {
   transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
-    background-color: #2bbbad; }
+    background-color: #eb7587; }
 
 .btn-floating {
   display: inline-block;
@@ -6305,7 +6306,7 @@ select:focus {
 
 button:focus {
   outline: none;
-  background-color: #2ab7a9; }
+  background-color: #c9f3ef; }
 
 label {
   font-size: 0.8rem;

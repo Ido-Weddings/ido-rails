@@ -17,6 +17,7 @@ class CreateEnterprises < ActiveRecord::Migration
       t.decimal :base_price
       t.float :latitude, default: -15.867390
       t.float :longitude, default: -48.030899
+      t.integer :number_ratings, default: 0
     end
   end
 end

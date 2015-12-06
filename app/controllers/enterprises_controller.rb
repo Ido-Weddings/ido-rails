@@ -74,7 +74,8 @@ class EnterprisesController < ApplicationController
 
   def show_categories
 		@category = Category.find(params[:id])
-		render :json => @category.enterprises.to_json
+    @enterprises = @category.enterprises.limit(10).offset(params[:offset])
+    render :json => @enterprises.to_json
 	end
 
 	def search_enterprise

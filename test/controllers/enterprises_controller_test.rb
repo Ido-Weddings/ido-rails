@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class EnterprisesControllerTest < ActionController::TestCase
+<<<<<<< HEAD
   setup do
     @enterprise = enterprises(:one)
   end
@@ -46,4 +47,9 @@ class EnterprisesControllerTest < ActionController::TestCase
 
     assert_redirected_to enterprises_path
   end
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+>>>>>>> master
 end
