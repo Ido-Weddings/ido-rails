@@ -7,7 +7,8 @@ class EnterprisesController < ApplicationController
   def index
     #@enterprises = Enterprise.all
     @enterprise = Enterprise.find current_enterprise.id
-    @categories = @enterprise.categories
+    @categories_of_enterprise = @enterprise.categories.uniq
+    @categories = Category.all
     @pictures = Picture.find_by_enterprise_id(current_enterprise.id)
     @picture = Picture.new
     #@picture = Picture.new enterprise_id: current_enterprise.id,
@@ -20,6 +21,14 @@ class EnterprisesController < ApplicationController
   end
 
   def pick_image
+    @picture = Picture.new    enterprise_id: current_enterprise.id,
+                              category_id: params[:category],
+                              picture: params[:cover]
+
+    # render json: picture.json
+    if @picture.save
+      redirect_to action: :index
+    end
   end
 
   # GET /enterprises/new
@@ -74,7 +83,13 @@ class EnterprisesController < ApplicationController
 
   def show_categories
 		@category = Category.find(params[:id])
-		render :json => @category.enterprises.to_json
+    @pictures = Picture.where(category_id: @category.id)
+    # @enterprises = @category.enterprises
+    # @enterprises.push(@category)
+    @enterprise_of_category = @category.to_json
+    @pictures_of_enterpreises = @pictures.to_json
+		render :json => @category.enterprises.to_json(include: :pictures)
+
 	end
 
 	def search_enterprise
@@ -109,4 +124,8 @@ class EnterprisesController < ApplicationController
     def category_params
   		params.require(:category).permit(:name)
   	end
+
+    def picture_params
+      params.permit(:cover, :category, :picture)
+    end
 end

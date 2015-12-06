@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'session/new'
-
-  get 'session/create'
-
-  get 'session/destroy'
-
-  get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -63,7 +56,7 @@ Rails.application.routes.draw do
   #   end
       root to: 'home#index'
       get '/home', to: 'home#index'
-      get '/category_enterprise/:id' => 'enterprises#show'
+      get '/category_enterprise/:id' => 'enterprises#show_categories'
       post '/signup_user' => 'users#create'
       post '/signin_user' => 'users#login'
       get '/get_user_preference/:id' => 'users#get_user_preference'
