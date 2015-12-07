@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :phone_number
-      t.date :wedding_date
+      t.string :wedding_date
       t.string :password_digest
       t.string :fb_picture_url
       t.string :profile_picture

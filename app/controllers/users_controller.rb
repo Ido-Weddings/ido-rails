@@ -86,33 +86,29 @@ class UsersController < ApplicationController
 
 	# Change to get by id
 	def get_user_preference
-		@user = User.find(1)
+		@user = User.find(params[:id])
 		@user_preference = @user.preferences
 		render json: @user_preference.to_json
 	end
 
 	# Change to get by id
 	def update_preferences
-		@user = User.find(1)
+		@user = User.find(params[:id_user])
 		preferences = params[:preferences]
 		render json: preferences[0][:budget].to_json
+		@user_preferences = @user.preferences
 
-		id = 1
-		it = 0
-		preferences.each do |p|
-			 @preference = Preference.find(id)
-			 @preference.budget = preferences[it][:budget]
-			 if it == 4
-				 @preference.musician = preferences[it][:musician]
-				 @preference.band = preferences[it][:band]
-				 @preference.dj = preferences[it][:dj]
-			 else
-				 # Nothing to do
-			 end
-
-			 @preference.save
-			 id = id + 1
-			 it = it + 1
+		
+		preferences.each do |new_preference|
+			@user_preferences.each do |preference_user|
+				if new_preference[:category_id] == preference_user.category_id
+					preference_user.budget = new_preference[:budget]
+					preference_user.musician = new_preference[:musician]
+					preference_user.band = new_preference[:band]
+					preference_user.dj = new_preference[:dj]
+					preference_user.save
+				end
+			end
 		end
 	end
 
@@ -167,6 +163,7 @@ class UsersController < ApplicationController
 			file_data = params[:fb_picture_url].tempfile
 			avatar = Cloudinary::Uploader.upload(File.open(file_data, 'r'))
 			@user.update(fb_picture_url: avatar["url"])
+			render json: @user.fb_picture_url.to_json
 		else
 			error = {:response => "false"}
 			render json: error.to_json

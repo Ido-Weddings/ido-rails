@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20151127170932) do
     t.string   "email"
     t.string   "address"
     t.string   "password_digest"
-    t.string   "cover"
     t.integer  "rating_id"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
@@ -103,6 +102,7 @@ ActiveRecord::Schema.define(version: 20151127170932) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "url"
+    t.string   "picture"
     t.integer  "user_id"
     t.integer  "enterprise_id"
     t.integer  "category_id"
@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 20151127170932) do
     t.string   "name"
     t.string   "email"
     t.string   "phone_number"
-    t.date     "wedding_date"
+    t.string   "wedding_date"
     t.string   "password_digest"
     t.string   "fb_picture_url"
     t.string   "profile_picture"

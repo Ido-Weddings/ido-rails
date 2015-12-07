@@ -1,10 +1,19 @@
-<%= form_tag '/pick_image', method: :put, html: {multipart: true} do %>
+<%= form_tag '/update_picture', method: :put, :enctype =>"multipart/form-data" do %>
   <div>
     <%= file_field_tag :cover %>
   </div>
   <div>
     <%= label_tag :category, 'Categoria' %>
-    <%= select_tag('category', options_from_collection_for_select(Category.all, "id", "name")) %>
+    <%= select_tag('category', options_from_collection_for_select(@categories_of_enterprise, "id", "name"), class: "browser-default" ) %>
+  </div>
+  <div>
+    Quais serviços sua empresa oferece?
+    <% @categories.each do |c| %>
+    <div>
+      <%= check_box_tag c.name, c.id, false, class: 'filled-in' %>
+      <%= label_tag c.name, c.name %>
+    </div>
+    <% end %>
   </div>
   <%= submit_tag 'enviar' %>
 <% end %>

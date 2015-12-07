@@ -6,7 +6,7 @@ class Enterprise < ActiveRecord::Base
   has_many :messages
 
   has_many :advises
-  has_many :users, through: :advises
+  has_many :users, -> { distinct }, through: :advises
 
   has_many :pictures
   has_many :categories, through: :pictures
