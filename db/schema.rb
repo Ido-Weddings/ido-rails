@@ -63,14 +63,14 @@ ActiveRecord::Schema.define(version: 20151127170932) do
     t.string   "cellphone"
     t.string   "email"
     t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "password_digest"
     t.integer  "rating_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.decimal  "rate",            default: 0.0
     t.decimal  "base_price"
-    t.float    "latitude",        default: -15.86739
-    t.float    "longitude",       default: -48.030899
   end
 
   add_index "enterprises", ["rating_id"], name: "index_enterprises_on_rating_id"

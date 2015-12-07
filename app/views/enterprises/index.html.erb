@@ -1,20 +1,60 @@
-<%= form_tag '/update_picture', method: :put, :enctype =>"multipart/form-data" do %>
-  <div>
-    <%= file_field_tag :cover %>
-  </div>
-  <div>
-    <%= label_tag :category, 'Categoria' %>
-    <%= select_tag('category', options_from_collection_for_select(@categories_of_enterprise, "id", "name"), class: "browser-default" ) %>
-  </div>
-  <div>
-    Quais serviços sua empresa oferece?
-    <% @categories.each do |c| %>
-    <div>
-      <%= check_box_tag c.name, c.id, false, class: 'filled-in' %>
-      <%= label_tag c.name, c.name %>
-    </div>
+<style>
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+</style>
+<h3>Upload de arquivo</h3>
+<%= link_to 'Logout', '/logout' %>
+<!-- Form to upload image -->
+<div class='container'>
+  <div class='row'>
+    <%= form_tag '/update_picture', method: :put, :enctype =>"multipart/form-data" do %>
+      <div>
+        <span class='waves-effect waves-light btn btn-file'>
+          Upload de imagem
+            <%= file_field_tag :cover, accept: 'image/png,image/gif,image/jpeg'%>
+        </span>
+      </div>
+
+      <div>
+        <%= label_tag :category, 'categoria da imagem' %>
+        <%= select_tag('category', options_from_collection_for_select(@categories_of_enterprise, "id", "name"), class: 'browser-default') %>
+      </div>
+      <div>
+        <%= submit_tag 'enviar', class: 'btn waves-effect waves-light' %>
+      </div>
     <% end %>
+    <%= link_to 'New Enterprise', new_enterprise_path %>
+    <%= link_to 'Logout', '/logout' %>
   </div>
-  <%= submit_tag 'enviar' %>
-<% end %>
-<%= link_to 'New Enterprise', new_enterprise_path %>
+</div>
+
+<!-- options button -->
+<div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+   <a class="btn-floating btn-large red">
+     <i class="large material-icons">mode_edit</i>
+   </a>
+   <ul>
+     <li><a href='/logout' class="btn-floating red"><i class="material-icons">settings_power</i></a></li>
+     <li><a class="btn-floating yellow darken-1"><i class="material-icons">insert_chart</i></a></li>
+     <li><a href='/enterprises' class="btn-floating green"><i class="material-icons">publish</i></a></li>
+     <li><a href='/enterprises/<%= current_enterprise.id %>/edit' class="btn-floating blue"><i class="material-icons">perm_identity</i></a></li>
+   </ul>
+ </div>

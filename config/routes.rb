@@ -77,6 +77,8 @@ Rails.application.routes.draw do
 
       put '/update_picture' => 'enterprises#pick_image'
 
+      get '/near_enterprises' => 'enterprises#get_near_enterprises'
+
       resources :enterprises
 
 end

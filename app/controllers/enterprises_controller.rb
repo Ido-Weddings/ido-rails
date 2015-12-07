@@ -34,11 +34,13 @@ class EnterprisesController < ApplicationController
   # GET /enterprises/new
   def new
     @enterprise = Enterprise.new
+    @categories = Category.all
   end
 
   # GET /enterprises/1/edit
   def edit
-
+    @enterprise = Enterprise.find(current_enterprise.id)
+    @categories = Category.all
   end
 
   # POST /enterprises
@@ -48,7 +50,8 @@ class EnterprisesController < ApplicationController
 
     respond_to do |format|
       if @enterprise.save
-        format.html { redirect_to @enterprise, notice: 'Enterprise was successfully created.' }
+        session[:enterprise_id] = @enterprise.id
+        format.html { redirect_to '/enterprises', notice: 'Enterprise was successfully created.' }
         format.json { render :show, status: :created, location: @enterprise }
       else
         format.html { render :new }
@@ -62,7 +65,7 @@ class EnterprisesController < ApplicationController
   def update
     respond_to do |format|
       if @enterprise.update(enterprise_params)
-        format.html { redirect_to @enterprise, notice: 'Enterprise was successfully updated.' }
+        format.html { redirect_to '/enterprise', notice: 'Enterprise was successfully updated.' }
         format.json { render :show, status: :ok, location: @enterprise }
       else
         format.html { render :edit }
@@ -83,7 +86,7 @@ class EnterprisesController < ApplicationController
 
   def show_categories
 		@category = Category.find(params[:id])
-    @pictures = Picture.where(category_id: @category.id)
+    # @pictures = Picture.where(category_id: @category.id)
     # @enterprises = @category.enterprises
     # @enterprises.push(@category)
     @enterprise_of_category = @category.to_json
@@ -109,6 +112,11 @@ class EnterprisesController < ApplicationController
 		render :json => @enterprises.to_json
 	end
 
+  def get_near_enterprises
+    @near_enterprises = Enterprise.near(40.6898869,  -74.0446704, 30, units: :km)
+    render :json => @near_enterprises.to_json
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_enterprise
@@ -118,7 +126,7 @@ class EnterprisesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def enterprise_params
       params.require(:enterprise).permit(:name, :description, :capacity, :telephone, :cellphone, :base_price,
-       :address, :email, :password, :password_confirmation)
+       :address, :email, :password, :password_confirmation, :latitude, :longitude,:category_ids => [])
     end
 
     def category_params
