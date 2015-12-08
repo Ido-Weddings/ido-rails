@@ -1,8 +1,48 @@
-<div class="container">
-  <div class="row">
-    <h4>Nova Empresa</h4>
+<nav class="top-nav" style="background-color: rgba(12, 39, 70, 1.0)">
+     <div class="nav-wrapper">
+         <ul class="right">
+            <li><a href="#" style="color: rgba(255, 255, 255, 1.0)">Login</a></li>
+         </ul>
+    </div>
+</nav>
+<br></br>
+<div class="valign-wrapper container">
+      <div class="col s10">
+        <h5>Criar conta para minha empresa</h5>
+      <%= render 'form' %>
+      </div>
 
-    <%= render 'form' %>
-
-  </div>
+      <div class="valign row">
+        <div class="col s6 offset-s5">
+          <%= image_tag "iphone.png", style: 'height160%;width:160%;' %>
+        </div>
+      </div>
 </div>
+
+
+
+<footer class="page-footer" style="background-color: rgba(235, 117, 135, 1.0);">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Biografia</h5>
+        <p class="grey-text text-lighten-4">Projeto desenvolvido por um time de estudantes do curso de Engenharia de Software da Universidade de Brasília para a diciplina de Desenvolvimento Avançado de Software</p>
+
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Configurações</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Conecte-se</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright" style="background-color: rgba(217, 67, 100, 1.0)">
+  </div>
+</footer>

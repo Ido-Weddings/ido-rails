@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # Save the enterprise id inside the browser cookie. This is how we keep the enterprise
       # logged in when they navigate around our website.
       session[:enterprise_id] = enterprise.id
-      redirect_to '/'
+      redirect_to '/enterprises'
     else
     # If enterprise's login doesn't work, send them back to the login form.
       redirect_to '/login'
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:enterprise_id] = nil
-    redirect_to '/login'
+    redirect_to '/'
   end
 
 end

@@ -80,5 +80,7 @@ Rails.application.routes.draw do
       get '/logout' => 'sessions#destroy'
       put '/update_picture' => 'enterprises#pick_image'
 
+      get '/near_enterprises' => 'enterprises#get_near_enterprises'
+
       resources :enterprises
 end

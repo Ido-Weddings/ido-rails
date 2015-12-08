@@ -98,7 +98,6 @@ class UsersController < ApplicationController
 		render json: preferences[0][:budget].to_json
 		@user_preferences = @user.preferences
 
-		
 		preferences.each do |new_preference|
 			@user_preferences.each do |preference_user|
 				if new_preference[:category_id] == preference_user.category_id

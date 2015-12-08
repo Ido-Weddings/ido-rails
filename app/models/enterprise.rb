@@ -12,6 +12,8 @@ class Enterprise < ActiveRecord::Base
   has_many :categories, through: :pictures
 
   has_and_belongs_to_many :users
+  geocoded_by :address
+  after_validation :geocode
   #has_and_belongs_to_many :categories
   # has_many :enterprise_category_pictures
   # has_many :categories, through: :enterprise_category_pictures
