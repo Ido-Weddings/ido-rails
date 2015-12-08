@@ -21,28 +21,39 @@
 }
 </style>
 <h3>Upload de arquivo</h3>
-<%= link_to 'Logout', '/logout' %>
 <!-- Form to upload image -->
 <div class='container'>
   <div class='row'>
     <%= form_tag '/update_picture', method: :put, :enctype =>"multipart/form-data" do %>
-      <div>
-        <span class='waves-effect waves-light btn btn-file'>
-          Upload de imagem
-            <%= file_field_tag :cover, accept: 'image/png,image/gif,image/jpeg'%>
-        </span>
+
+      <div class='row'>
+        <div class='col s12'>
+          <span class='waves-effect waves-light btn btn-file'>
+            Upload de imagem
+              <%= file_field_tag :cover, accept: 'image/png,image/gif,image/jpeg'%>
+          </span>
+        </div>
       </div>
 
-      <div>
+      <div class='row'>
+        <div class='col s6'>
+          <%= cl_image_tag("sample.jpg", :width => 200, :height => 250, :crop => :fill) %>
+        </div>
+
+      <div class='col s6'>
         <%= label_tag :category, 'categoria da imagem' %>
         <%= select_tag('category', options_from_collection_for_select(@categories_of_enterprise, "id", "name"), class: 'browser-default') %>
       </div>
-      <div>
+
+      <div class='col s4'>
         <%= submit_tag 'enviar', class: 'btn waves-effect waves-light' %>
       </div>
-    <% end %>
-    <%= link_to 'New Enterprise', new_enterprise_path %>
-    <%= link_to 'Logout', '/logout' %>
+      <% end %>
+      <% if false %>
+        <%= link_to 'New Enterprise', new_enterprise_path %>
+        <%= link_to 'Logout', '/logout' %>
+      <% end %>
+    </div>
   </div>
 </div>
 
