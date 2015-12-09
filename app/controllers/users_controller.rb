@@ -122,7 +122,7 @@ class UsersController < ApplicationController
 
 	def show_providers_by_user
 		@user = User.find(params[:id_user])
-		render json: @user.enterprises.to_json
+		render json: @user.enterprises.to_json(include: :pictures)
 	end
 
 	def checkusers
@@ -141,7 +141,7 @@ class UsersController < ApplicationController
 
 	def show_providers_advised_by_user
 		@enterprises = Enterprise.joins(:advises).where(advises: {user_id: params[:id_user]})
-		render json: @enterprises.to_json
+		render json: @enterprises.to_json(include: :pictures)
 	end
 
 	def advise_provider

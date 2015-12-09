@@ -93,10 +93,10 @@ class EnterprisesController < ApplicationController
 	def search_enterprise
 		if params[:search]
 	      @enterprise = Category.find(params[:id]).enterprises.search(params[:search])
-	      render :json => @enterprise.to_json
+	      render :json => @enterprise.to_json(include: :pictures)
 	    else
 	      @category = Category.find(params[:id])
-	      render :json => @category.enterprises.to_json
+	      render :json => @category.enterprises.to_json(include: :pictures)
 	    end
 	end
 
@@ -104,7 +104,7 @@ class EnterprisesController < ApplicationController
 		@user = User.find(params[:id_user])
 		budget = @user.preferences.find_by_category_id(params[:id_category]).budget
 		@enterprises = Category.find(params[:id_category]).enterprises.order(:rate).where("base_price <= ?", budget).reverse
-		render :json => @enterprises.to_json
+		render :json => @enterprises.to_json(include: :pictures)
 	end
 
   def get_near_enterprises
