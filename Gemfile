@@ -34,6 +34,7 @@ gem 'materialize-sass'
 gem 'cloudinary'
 gem 'geocoder'
 gem "font-awesome-rails"
+gem "rails-erd"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
